@@ -1,0 +1,120 @@
+body {
+    background-color: #c8d0d2; 
+    margin: 0; 
+    font-family: poppins;
+}
+.container {
+    max-width: 900px;
+    padding: 1rem 2rem;
+    margin: 0 auto;
+}
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: white;
+    padding: 0 1.5rem;
+    box-shadow: 0 0 5px 2px rgba(0,0,0,.3);
+}
+h2 {
+    margin: 0;
+    font-size: .8rem;
+    font-weight: 700;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin: .5rem;
+}
+.form-group > label {
+    color: #777;
+    font-size: .75rem;
+    font-weight: 700;
+    margin-bottom: .25rem;
+}
+.form-group select, .form-group input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+    box-sizing: border-box;
+}
+.btn {
+    background-color: hsl(200, 100%, 50%);
+    color: white;
+    padding: .5em 1em;
+    border-radius: .3em;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.btn:not(:disabled):hover {
+    background-color: hsl(200, 100%, 40%);
+}
+.btn:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+  }
+  
+.card-grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    border-radius: .25rem;
+    box-shadow: 0 0 5px 2px rgba(0,0,0,.3);
+    background-color: white;
+    height: 150px;
+
+    transform: perspective(1000px) rotateY(var(--rotate-y, 0)) translateY(var(--translate-y, 0));
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 150ms;
+}
+.card:hover {
+    --translate-y: -2px;
+    box-shadow:  0 0 5px 2px rgba(0,0,0,.5);
+}
+.card.flip {
+    --rotate-y: 180deg;
+}
+.card .front {
+    left: 0;
+}
+.card .front,
+.card .back
+{
+    position: absolute;
+    padding: 1rem;
+    backface-visibility: hidden;
+}
+.card .back {
+    transform: rotateY(180deg);
+}
+.flashcard-options {
+    margin-top: .5rem;
+}
+.flashcard-option {
+    margin-top: .25rem;
+    color: #555;
+}
+.difficulty, .type {
+    background-color: #555;
+    padding: 1px 5px;
+    border-radius: 100vh;
+    color: white;
+    white-space: nowrap;
+}
+.flashcard-option, .difficulty, .type {
+    font-size: .75rem;
+}
+.flashcard-option:first-child {
+    margin-top: 0;
+}

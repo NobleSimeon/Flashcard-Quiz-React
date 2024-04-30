@@ -1,0 +1,47 @@
+.card-grid {
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.skeleton {
+    height: .5rem;
+    border-radius: 100vw;
+    margin-bottom: 5px;
+    animation: skeleton 1s ease-in-out infinite alternate ;
+}
+.skeleton-container {
+    padding: .7rem;
+    background-color: #fff;
+    height: 200px;
+}
+.skeleton-heading  {
+    margin-bottom: 10px;
+}
+.skeleton-heading,
+.skeleton-question:nth-child(5)  {
+    width: 70%;
+}
+.skeleton-difficulty,
+.skeleton-type  {
+    display: inline-block;
+    width: 25%;
+}
+.skeleton-flashcard-options {
+    margin-top: 10px;
+}
+.skeleton-flashcard-option {
+    width: 60%;
+}
+
+@keyframes skeleton {
+    0% {
+        background-color: #999;
+    }
+    100% {
+        background-color: #c8d0d2;
+    }
+}
+
+
